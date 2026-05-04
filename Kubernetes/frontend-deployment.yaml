@@ -1,3 +1,4 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -23,4 +24,14 @@ spec:
           ports:
             - containerPort: 3000
           resources: {}
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+              add: []
+      securityContext:
+        capabilities:
+          drop:
+            - ALL
+          add: []
 status: {}
